@@ -36,8 +36,9 @@ async def on_ready():
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(
-        f'Yooo {member.name}, sympa de te revoir!'
+        f'Yooo {member.name}, Bienvenue sur peaceandcube, moi je suis Cravebot!'
     )
+    print(member.name+" vient de rejoindre le serveur.")
 
 
 
