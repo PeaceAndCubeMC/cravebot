@@ -51,11 +51,11 @@ async def on_message(message):
 
     if 'peace' in message.content.lower():
         await message.channel.send('Ouais bien dit ça! Peace')
-        print(message.author + " a declenché le mot peace")
+        print(str(message.author) + " a declenché le mot peace")
 
     if 'fdp' in message.content.lower():
         await message.channel.send('Oulalala le langage !!!')
-        print(message.author + " a declenché le mot fdp")
+        print(str(message.author) + " a declenché le mot fdp")
 
 
 client.run(TOKEN)
