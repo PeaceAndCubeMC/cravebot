@@ -14,6 +14,8 @@ intents.members = True
 
 client = discord.Client(intents=intents)
 
+
+#### Chargement
 @client.event
 async def on_ready():
     for guild in client.guilds:
@@ -31,7 +33,7 @@ async def on_ready():
 
 
 
- 
+##### Evenement nouveau joueur 
 @client.event
 async def on_member_join(member):
     await member.create_dm()
@@ -41,14 +43,19 @@ async def on_member_join(member):
     print(member.name+" vient de rejoindre le serveur.")
 
 
+##### Evenement message salon/mp
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
+
     if 'peace' in message.content.lower():
         await message.channel.send('Ouais bien dit ça! Peace')
+        print(message.author + " a declenché le mot peace")
 
-
+    if 'fdp' in message.content.lower():
+        await message.channel.send('Oulalala le langage !!!')
+        print(message.author + " a declenché le mot fdp")
 
 
 client.run(TOKEN)
