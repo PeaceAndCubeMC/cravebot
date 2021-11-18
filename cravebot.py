@@ -28,4 +28,17 @@ async def on_ready():
     members = '\n - '.join([member.name for member in guild.members])
     print(f'Guild Members:\n - {members}')
     print("Nombre de joueurs"+str(len(guild.members)))
+
+
+
+ 
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Yooo {member.name}, sympa de te revoir!'
+    )
+
+
+
 client.run(TOKEN)
