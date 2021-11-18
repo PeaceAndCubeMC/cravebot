@@ -27,7 +27,7 @@ async def on_ready():
 
     members = '\n - '.join([member.name for member in guild.members])
     print(f'Guild Members:\n - {members}')
-    print("Nombre de joueurs"+str(len(guild.members)))
+    print("Nombre de joueurs : "+str(len(guild.members)))
 
 
 
@@ -39,6 +39,15 @@ async def on_member_join(member):
         f'Yooo {member.name}, Bienvenue sur peaceandcube, moi je suis Cravebot!'
     )
     print(member.name+" vient de rejoindre le serveur.")
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if 'peace' in message.content.lower():
+        await message.channel.send('Ouais bien dit ça! Peace')
+
 
 
 
